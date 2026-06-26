@@ -1383,7 +1383,6 @@ odm/lib64/libCamera_s5kjn1submipiraw_Video_Zoom1.so
 odm/lib64/libarcsoft_low_light_shot.so
 odm/lib64/libarcsoft_portrait_distortion_correction.so
 odm/lib64/libmpbase.so
-system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
 vendor/bin/hw/mt6789/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
 vendor/etc/init/camerahalserver.rc
 vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
@@ -1498,12 +1497,12 @@ vendor/lib64/mt6789/libcamera.customae.so;SYMLINK=vendor/lib64/libcamera.customa
 vendor/lib64/mt6789/libcamera.customaf.so;SYMLINK=vendor/lib64/libcamera.customaf.so
 vendor/lib64/mt6789/libcamera.customawb.so;SYMLINK=vendor/lib64/libcamera.customawb.so
 vendor/lib64/mt6789/libcamera.customflk.so;SYMLINK=vendor/lib64/libcamera.customflk.so
-vendor/lib64/mt6789/libcameracustom.camera.3a.so;SYMLINK=vendor/lib64/libcameracustom.camera.3a.so
-vendor/lib64/mt6789/libcameracustom.camera.isp.so;SYMLINK=vendor/lib64/libcameracustom.camera.isp.so
+vendor/lib64/mt6789/libcameracustom.camera.3a.so;SYMLINK=vendor/lib64/libcameracustom.camera.3a.so;SYMLINK=odm/lib64/mt6789/libcameracustom.camera.3a.so;SYMLINK=odm/lib64/libcameracustom.camera.3a.so
+vendor/lib64/mt6789/libcameracustom.camera.isp.so;SYMLINK=vendor/lib64/libcameracustom.camera.isp.so;SYMLINK=odm/lib64/mt6789/libcameracustom.camera.isp.so;SYMLINK=odm/lib64/libcameracustom.camera.isp.so
 vendor/lib64/mt6789/libcameracustom.camera.sensors.so;SYMLINK=vendor/lib64/libcameracustom.camera.sensors.so
 vendor/lib64/mt6789/libcameracustom.camera_exif.so;SYMLINK=vendor/lib64/libcameracustom.camera_exif.so
 vendor/lib64/mt6789/libcameracustom.eis.so;SYMLINK=vendor/lib64/libcameracustom.eis.so
-vendor/lib64/mt6789/libcameracustom.flashlight.so;SYMLINK=vendor/lib64/libcameracustom.flashlight.so
+vendor/lib64/mt6789/libcameracustom.flashlight.so;SYMLINK=vendor/lib64/libcameracustom.flashlight.so;SYMLINK=odm/lib64/mt6789/libcameracustom.flashlight.so;SYMLINK=odm/lib64/libcameracustom.flashlight.so
 vendor/lib64/mt6789/libcameracustom.lens.so;SYMLINK=vendor/lib64/libcameracustom.lens.so
 vendor/lib64/mt6789/libdip_drv.so;SYMLINK=vendor/lib64/libdip_drv.so
 vendor/lib64/mt6789/libdip_postproc.so;SYMLINK=vendor/lib64/libdip_postproc.so
@@ -1715,7 +1714,7 @@ vendor/lib64/vendor.mediatek.hardware.camera.bgservice-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
 vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
@@ -1733,8 +1732,6 @@ vendor/lib64/chre_atoms_log.so
 vendor/lib64/chremetrics-cpp.so
 
 # Display
-system_ext/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
-system_ext/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.mms@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.mms@1.1.so
 system_ext/lib64/vendor.mediatek.hardware.mms@1.2.so
@@ -1756,7 +1753,6 @@ vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
 vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6789/libGLES_mali.so;SYMLINK=vendor/lib64/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so;SYMLINK=vendor/lib64/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so;SYMLINK=vendor/lib64/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so;SYMLINK=vendor/lib64/libMEOW_gift.so
@@ -1786,8 +1782,8 @@ vendor/lib64/libpqframework.so
 vendor/lib64/libpqxmlflagparser.so
 vendor/lib64/libpqxmlparser.so
 vendor/lib64/libsilkybrightnesscore.so
-vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.graphics-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
@@ -1962,11 +1958,6 @@ vendor/lib64/libhwm.so
 vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so
 
 # Power
-system_ext/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so
-system_ext/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
-system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
-system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
-system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower-service.mediatek
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower_applist-service.mediatek
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
@@ -1977,11 +1968,11 @@ vendor/lib64/libpower_timer.so
 vendor/lib64/libpowerhal.so
 vendor/lib64/vendor.mediatek.framework.mtksf_ext-V7-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
@@ -2040,7 +2031,6 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt_new-V1-ndk.so
 
 # Radio (IMS)
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/bip
 vendor/bin/charon
@@ -2080,7 +2070,7 @@ vendor/lib64/libwo.so
 vendor/lib64/vendor.mediatek.hardware.clientapi-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.rcs-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so;SYMLINK=system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 
 # RenderScript
 vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so;SYMLINK=vendor/lib64/android.hardware.renderscript@1.0-impl.so
@@ -3212,20 +3202,8 @@ odm/firmware/wifi.cfg
 odm/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=odm/lib64/jiiov.fingerprint.default.so
 odm/lib64/mt6789/gc08a8wide1969_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/gc08a8wide1969_mipi_raw_IdxMgr.so
 odm/lib64/mt6789/gc08a8wide1969_mipi_raw_tuning.so;SYMLINK=odm/lib64/gc08a8wide1969_mipi_raw_tuning.so
-odm/lib64/mt6789/gc08a8wide_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/gc08a8wide_mipi_raw_IdxMgr.so
-odm/lib64/mt6789/gc08a8wide_mipi_raw_tuning.so;SYMLINK=odm/lib64/gc08a8wide_mipi_raw_tuning.so
-odm/lib64/mt6789/imx896_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/imx896_mipi_raw_IdxMgr.so
-odm/lib64/mt6789/imx896_mipi_raw_tuning.so;SYMLINK=odm/lib64/imx896_mipi_raw_tuning.so
 odm/lib64/mt6789/libCamera_gc08a8wide1969mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_gc08a8wide1969mipiraw_Scene_Capture.so
-odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Flash_Capture.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Flash_Capture.so
-odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Capture.so
-odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so
-odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Preview.so
 odm/lib64/mt6789/libCamera_gc50f6mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_gc50f6mipiraw_Scene_Capture.so
-odm/lib64/mt6789/libCamera_imx896mipiraw_Flash_Capture.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Flash_Capture.so
-odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Capture.so
-odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Capture_4cell.so
-odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Preview.so
 odm/lib64/mt6789/libCamera_ov50d40mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_ov50d40mipiraw_Scene_Capture.so
 odm/lib64/mt6789/libCamera_pblcgc08a8widemipiraw_Flash_Capture.so;SYMLINK=odm/lib64/libCamera_pblcgc08a8widemipiraw_Flash_Capture.so
 odm/lib64/mt6789/libCamera_pblcgc08a8widemipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_pblcgc08a8widemipiraw_Scene_Capture.so
@@ -3258,9 +3236,6 @@ odm/lib64/mt6789/libFy-3A-Core.so;SYMLINK=odm/lib64/libFy-3A-Core.so
 odm/lib64/mt6789/libFy-3A-Param.so;SYMLINK=odm/lib64/libFy-3A-Param.so
 odm/lib64/mt6789/libcam.hal3a.v3.tran.cusawb.so;SYMLINK=odm/lib64/libcam.hal3a.v3.tran.cusawb.so
 odm/lib64/mt6789/libcam.hal3a.v3.tran.fyawb.so;SYMLINK=odm/lib64/libcam.hal3a.v3.tran.fyawb.so
-odm/lib64/mt6789/libcameracustom.camera.3a.so;SYMLINK=odm/lib64/libcameracustom.camera.3a.so
-odm/lib64/mt6789/libcameracustom.camera.isp.so;SYMLINK=odm/lib64/libcameracustom.camera.isp.so
-odm/lib64/mt6789/libcameracustom.flashlight.so;SYMLINK=odm/lib64/libcameracustom.flashlight.so
 odm/lib64/mt6789/libcameracustom.plugin.so;SYMLINK=odm/lib64/libcameracustom.plugin.so
 odm/lib64/mt6789/libcameracustom.so;SYMLINK=odm/lib64/libcameracustom.so
 odm/lib64/mt6789/libyuvenhance.so;SYMLINK=odm/lib64/libyuvenhance.so
@@ -3289,7 +3264,6 @@ odm/lib64/libTranfacOverlay.so
 odm/lib64/libTranssionTone.so
 odm/lib64/lib_aimoon.so
 odm/lib64/lib_moondetection.so
-odm/lib64/libaal_cust.so
 odm/lib64/libanc_extension_service.so
 odm/lib64/libanc_hdr.so
 odm/lib64/libanc_hdr_adapter_gc08a8wide_17201942_back_g97.so
@@ -3320,7 +3294,6 @@ odm/lib64/libpixsmart_hdr.so
 odm/lib64/libpixsmart_mf_base.so
 odm/lib64/libpixsmart_mf_base2.so
 odm/lib64/libpixsmart_ns.so
-odm/lib64/libremosaic_wrapper.so
 odm/lib64/libremosaiclib.so
 odm/lib64/librmsclib1.so
 odm/lib64/libsegmention.so
@@ -4196,8 +4169,8 @@ vendor/lib64/mt6789/gc08a8ffext2_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8f
 vendor/lib64/mt6789/gc08a8ffext2_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8ffext2_mipi_raw_tuning.so
 vendor/lib64/mt6789/gc08a8rear_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8rear_mipi_raw_IdxMgr.so
 vendor/lib64/mt6789/gc08a8rear_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8rear_mipi_raw_tuning.so
-vendor/lib64/mt6789/gc08a8wide_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8wide_mipi_raw_IdxMgr.so
-vendor/lib64/mt6789/gc08a8wide_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8wide_mipi_raw_tuning.so
+vendor/lib64/mt6789/gc08a8wide_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8wide_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/mt6789/gc08a8wide_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/gc08a8wide_mipi_raw_IdxMgr.so
+vendor/lib64/mt6789/gc08a8wide_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8wide_mipi_raw_tuning.so;SYMLINK=odm/lib64/mt6789/gc08a8wide_mipi_raw_tuning.so;SYMLINK=odm/lib64/gc08a8wide_mipi_raw_tuning.so
 vendor/lib64/mt6789/gc08a8wideff_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8wideff_mipi_raw_IdxMgr.so
 vendor/lib64/mt6789/gc08a8wideff_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8wideff_mipi_raw_tuning.so
 vendor/lib64/mt6789/gc13a0ff_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc13a0ff_mipi_raw_IdxMgr.so
@@ -4215,8 +4188,8 @@ vendor/lib64/mt6789/hi3231qx6855_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/hi3231q
 vendor/lib64/mt6789/hi3231qx6855_mipi_raw_tuning.so;SYMLINK=vendor/lib64/hi3231qx6855_mipi_raw_tuning.so
 vendor/lib64/mt6789/imx882_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/imx882_mipi_raw_IdxMgr.so
 vendor/lib64/mt6789/imx882_mipi_raw_tuning.so;SYMLINK=vendor/lib64/imx882_mipi_raw_tuning.so
-vendor/lib64/mt6789/imx896_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/imx896_mipi_raw_IdxMgr.so
-vendor/lib64/mt6789/imx896_mipi_raw_tuning.so;SYMLINK=vendor/lib64/imx896_mipi_raw_tuning.so
+vendor/lib64/mt6789/imx896_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/imx896_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/mt6789/imx896_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/imx896_mipi_raw_IdxMgr.so
+vendor/lib64/mt6789/imx896_mipi_raw_tuning.so;SYMLINK=vendor/lib64/imx896_mipi_raw_tuning.so;SYMLINK=odm/lib64/mt6789/imx896_mipi_raw_tuning.so;SYMLINK=odm/lib64/imx896_mipi_raw_tuning.so
 vendor/lib64/mt6789/lib3a.aishutter.models.so;SYMLINK=vendor/lib64/lib3a.aishutter.models.so
 vendor/lib64/mt6789/libCamera_gc02m3macromipiraw_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_gc02m3macromipiraw_E2EHDR_Preview.so
 vendor/lib64/mt6789/libCamera_gc02m3macromipiraw_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_gc02m3macromipiraw_E2EHDR_Video.so
@@ -4341,7 +4314,7 @@ vendor/lib64/mt6789/libCamera_gc08a8wideffmipiraw_Video_4k.so;SYMLINK=vendor/lib
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_E2EHDR_Preview.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_E2EHDR_Video.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Face_Capture.so
-vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Flash_Capture.so
+vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Flash_Capture.so;SYMLINK=odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Flash_Capture.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Flash_Capture.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_HDR_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_HDR_Capture.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_HDR_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_HDR_Preview.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_HDR_Reconfig_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_HDR_Reconfig_Preview.so
@@ -4351,9 +4324,9 @@ vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_N3D_Capture.so;SYMLINK=vendor/li
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_N3D_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_N3D_Preview.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_N3D_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_N3D_Video.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_P1_YUV.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_P1_YUV.so
-vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Capture.so
-vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so
-vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Preview.so
+vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Capture.so;SYMLINK=odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Capture.so
+vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Capture_4cell.so
+vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Preview.so;SYMLINK=odm/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview.so;SYMLINK=odm/lib64/libCamera_gc08a8widemipiraw_Scene_Preview.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview_4k.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Preview_4k.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Scene_Preview_ZSD_Flash.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Scene_Preview_ZSD_Flash.so
 vendor/lib64/mt6789/libCamera_gc08a8widemipiraw_Video_1080.so;SYMLINK=vendor/lib64/libCamera_gc08a8widemipiraw_Video_1080.so
@@ -4486,7 +4459,7 @@ vendor/lib64/mt6789/libCamera_imx882mipiraw_Video_4k.so;SYMLINK=vendor/lib64/lib
 vendor/lib64/mt6789/libCamera_imx896mipiraw_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_E2EHDR_Preview.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_E2EHDR_Video.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Face_Capture.so
-vendor/lib64/mt6789/libCamera_imx896mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Flash_Capture.so
+vendor/lib64/mt6789/libCamera_imx896mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Flash_Capture.so;SYMLINK=odm/lib64/mt6789/libCamera_imx896mipiraw_Flash_Capture.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Flash_Capture.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_HDR_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_HDR_Capture.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_HDR_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_HDR_Preview.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_HDR_Reconfig_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_HDR_Reconfig_Preview.so
@@ -4496,9 +4469,9 @@ vendor/lib64/mt6789/libCamera_imx896mipiraw_N3D_Capture.so;SYMLINK=vendor/lib64/
 vendor/lib64/mt6789/libCamera_imx896mipiraw_N3D_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_N3D_Preview.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_N3D_Video.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_N3D_Video.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_P1_YUV.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_P1_YUV.so
-vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Capture.so
-vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Capture_4cell.so
-vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Preview.so
+vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Capture.so
+vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Capture_4cell.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Capture_4cell.so
+vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Preview.so;SYMLINK=odm/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview.so;SYMLINK=odm/lib64/libCamera_imx896mipiraw_Scene_Preview.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview_4k.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Preview_4k.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_Scene_Preview_ZSD_Flash.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Scene_Preview_ZSD_Flash.so
 vendor/lib64/mt6789/libCamera_imx896mipiraw_Video_1080.so;SYMLINK=vendor/lib64/libCamera_imx896mipiraw_Video_1080.so
@@ -4580,7 +4553,7 @@ vendor/lib64/lib_healthinfo_vendor.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_power_applist.so
 vendor/lib64/lib_tran_ffu.so
-vendor/lib64/libaal_cust.so
+vendor/lib64/libaal_cust.so;SYMLINK=odm/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaimemc.so
 vendor/lib64/libaiste.so
@@ -4736,7 +4709,7 @@ vendor/lib64/libpkm.so
 vendor/lib64/libpn560_fw.so
 vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/libpqcustutils.so
-vendor/lib64/libremosaic_wrapper.so
+vendor/lib64/libremosaic_wrapper.so;SYMLINK=odm/lib64/libremosaic_wrapper.so
 vendor/lib64/librpmb_ca.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libruy.so
