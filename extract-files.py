@@ -27,7 +27,12 @@ from extract_utils.utils import (
 )
 
 namespace_imports = [
-    'device/lineage/example',
+    'device/transsion/CM6',
+    'hardware/mediatek',
+    'hardware/mediatek/libaedv',
+    'hardware/mediatek/libmtkperf_client',
+    'hardware/millennium',
+    'hardware/millennium/libtranlog',
 ]
 
 

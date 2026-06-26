@@ -100,7 +100,14 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
+    hardware/mediatek/libaedv \
+    hardware/mediatek/libmtkperf_client \
+    hardware/millennium \
+    hardware/millennium/libtranlog    
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/transsion/CM6/CM6-vendor.mk)
