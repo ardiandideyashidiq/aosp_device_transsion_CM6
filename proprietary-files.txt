@@ -79,8 +79,6 @@ vendor/lib64/libdts-eagle-shared.so
 vendor/lib64/libvibratorutils.so
 
 # Audio configs
-etc/audio_effects.conf
-etc/audio_effects.xml
 system_ext/etc/a2dp_audio_policy_configuration.xml
 system_ext/etc/a2dp_in_audio_policy_configuration.xml
 system_ext/etc/audio_policy_configuration.xml
@@ -2438,17 +2436,6 @@ vendor/lib64/vendor.mediatek.hardware.mtklight-V1-ndk.so
 vendor/lib64/hw/local_time.default.so
 
 # Media
-etc/seccomp_policy/mediacodec.policy
-lib64/graphicbuffersource-aidl-ndk.so
-lib64/libaconfig_storage_read_api_cc.so
-lib64/libmedia_codeclist.so
-lib64/libmedia_codeclist_capabilities.so
-lib64/libstagefright_aidl_bufferpool2.so
-lib64/libstagefright_bufferpool@2.0.1.so
-lib64/libstagefright_codecbase.so
-lib64/libstagefright_framecapture_utils.so
-lib64/libstagefright_graphicbuffersource_aidl.so
-lib64/libstagefright_surface_utils.so
 system_ext/lib64/libged_sys.so
 system_ext/lib64/libgralloc_extra_sys.so
 system_ext/lib64/libsf_cpupolicy.so
@@ -2521,7 +2508,7 @@ vendor/lib64/vendor.nxp.nxpnfc_aidl-V1-ndk.so
 vendor/lib64/vendor.tms.tmsnfc_aidl-V1-ndk.so
 
 # NFC configs
-etc/libnfc-nci.conf
+
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram-service
