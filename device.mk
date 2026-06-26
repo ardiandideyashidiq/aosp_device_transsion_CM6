@@ -103,4 +103,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/transsion/mssi_64_64only_cn_armv82/mssi_64_64only_cn_armv82-vendor.mk)
+$(call inherit-product, vendor/transsion/CM6/CM6-vendor.mk)

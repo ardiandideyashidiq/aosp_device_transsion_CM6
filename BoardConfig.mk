@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/transsion/mssi_64_64only_cn_armv82
+DEVICE_PATH := device/transsion/CM6
 
 # A/B
 AB_OTA_UPDATER := true
@@ -112,4 +112,4 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
-include vendor/transsion/mssi_64_64only_cn_armv82/BoardConfigVendor.mk
+include vendor/transsion/CM6/BoardConfigVendor.mk

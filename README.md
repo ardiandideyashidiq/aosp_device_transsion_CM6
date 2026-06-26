@@ -1,4 +1,4 @@
-# Android device tree for Transsion Tssi (mssi_64_64only_cn_armv82)
+# Android device tree for Transsion Tssi (CM6)
 
 ```
 #

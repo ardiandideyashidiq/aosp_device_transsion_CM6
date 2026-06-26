@@ -5,6 +5,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),mssi_64_64only_cn_armv82)
+ifeq ($(TARGET_DEVICE),CM6)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

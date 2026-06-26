@@ -1,4 +1,4 @@
-# Unpinned blobs from sys_mssi_64_64only_cn_armv82-user 16 BP2A.250605.031.A3 82815 release-keys
+# Unpinned blobs from CM6-user 16 BP2A.250605.031.A3 82815 release-keys
 
 # Audio
 system_ext/bin/hw/android.hardware.audio.parameter_parser.service
