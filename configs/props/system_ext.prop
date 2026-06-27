@@ -1,5 +1,0 @@
-# Miscellaneous
-ro.config.isolated_compilation_enabled=true
-ro.system_ext.build.version.sdk_full=36.0
-ro.tran.system_ext.version=16.2.0.135SP13_STB260423151218
-

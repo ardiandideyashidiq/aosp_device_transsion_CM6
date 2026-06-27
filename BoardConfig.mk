@@ -185,9 +185,9 @@ TARGET_BOARD_PLATFORM := mt6789
 BOARD_HAS_MTK_HARDWARE := true
 
 # Properties
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
+TARGET_PRODUCT_PROP += $(CONFIGS_PATH)/props/product.prop
+TARGET_SYSTEM_PROP += $(CONFIGS_PATH)/props/system.prop
+TARGET_VENDOR_PROP += $(CONFIGS_PATH)/props/vendor.prop
 
 # Recovery
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
@@ -199,9 +199,9 @@ BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 
 # Selinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(CONFIGS_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(CONFIGS_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(CONFIGS_PATH)/sepolicy/vendor
 
 # Vendor Security Patch
 BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
