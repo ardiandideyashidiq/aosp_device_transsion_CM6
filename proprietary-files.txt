@@ -317,22 +317,6 @@ vendor/lib64/soundfx/libvisualizeraidl.so;SYMLINK=vendor/lib64/libvisualizeraidl
 vendor/lib64/soundfx/libvolumesw.so;SYMLINK=vendor/lib64/libvolumesw.so
 
 # Audio configs
-odm/etc/vconfig/audio/aurisys_config.xml
-system_ext/etc/a2dp_audio_policy_configuration.xml
-system_ext/etc/a2dp_in_audio_policy_configuration.xml
-system_ext/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
-system_ext/etc/audio_policy_configuration_stub.xml
-system_ext/etc/audio_policy_configuration.xml
-system_ext/etc/audio_policy_engine_configuration.xml
-system_ext/etc/audio_policy_engine_default_stream_volumes.xml
-system_ext/etc/audio_policy_engine_product_strategies.xml
-system_ext/etc/audio_policy_engine_stream_volumes.xml
-system_ext/etc/audio_policy_volumes.xml
-system_ext/etc/bluetooth_audio_policy_configuration.xml
-system_ext/etc/default_volume_tables.xml
-system_ext/etc/hearing_aid_audio_policy_configuration.xml
-system_ext/etc/r_submix_audio_policy_configuration.xml
-system_ext/etc/usb_audio_policy_configuration.xml
 vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/a2dp_in_audio_policy_configuration.xml
 vendor/etc/aconfig_flags.pb
@@ -343,26 +327,15 @@ vendor/etc/aidl/le_audio/aidl_audio_set_scenarios.bfbs_mtk
 vendor/etc/aidl/le_audio/aidl_default_audio_set_configurations.json
 vendor/etc/aidl/le_audio/aidl_default_audio_set_configurations.json_mtk
 vendor/etc/aidl/le_audio/aidl_default_audio_set_scenarios.json
-vendor/etc/audio_device.xml
-vendor/etc/audio_effects_config.xml
-vendor/etc/audio_effects.xml
-vendor/etc/audio_em.xml
 vendor/etc/audio_framework_configuration.xml
-vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/audio_policy_volumes.xml
 vendor/etc/audio_policy.conf
 vendor/etc/AudioDump_dynamic.ds
 vendor/etc/AudioLog_dynamic.ds
-vendor/etc/aurisys_config_adsp.xml
-vendor/etc/aurisys_config.xml
 vendor/etc/bluetooth_audio_policy_configuration.xml
 vendor/etc/bluetooth_offload_audio_policy_configuration.xml
 vendor/etc/default_volume_tables.xml
 vendor/etc/le_audio_codec_capabilities.xml
 vendor/etc/r_submix_audio_policy_configuration.xml
-vendor/etc/usb_audio_accessory_only_policy_configuration.xml
-vendor/etc/usb_audio_policy_configuration.xml
 
 # Audio calibration
 vendor/etc/audio_param/AudioParamOptions_mgvi.xml
@@ -3296,7 +3269,6 @@ vendor/lib64/mt6789/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_m
 vendor/lib64/mt6789/libmtk_mali_user.so;SYMLINK=vendor/lib64/libmtk_mali_user.so
 
 # Display (ODM)
-odm/etc/displayconfig/display_id_4627039422300187648.xml
 odm/etc/vconfig/display/ccorr_golden.conf
 odm/etc/vconfig/display/ccorr_golden2.conf
 odm/etc/vconfig/display/ccorr_golden3.conf
@@ -3558,7 +3530,6 @@ system_ext/lib64/libsf_cpupolicy.so
 system_ext/lib64/libstagefright_wfd_mtk.so
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
-vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/vintf/manifest/manifest_media_c2_default.xml
 vendor/etc/wfd_source_capability.csv
 vendor/lib64/libcodec2_aidl.so
@@ -3603,13 +3574,8 @@ vendor/lib64/vendor.dolby.dms-V1-ndk.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
 # Media configs
-odm/etc/media_profiles_V1_0.xml
-odm/etc/vconfig/media/media_codecs_c2.xml
 odm/etc/vconfig/media/media_codecs_dolby_audio.xml
-vendor/etc/media_codecs_c2.xml
-vendor/etc/media_codecs_performance.xml
 vendor/etc/media_codecs.xml
-vendor/etc/mtk_platform_codecs_config.xml
 
 # Media (Common)
 vendor/lib64/AVCSecureVdecCA.so
@@ -4129,12 +4095,6 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 # RenderScript
 vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so;SYMLINK=vendor/lib64/android.hardware.renderscript@1.0-impl.so
 
-# Seccomp Policies
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
-vendor/etc/seccomp_policy/mediaextractor.policy
-vendor/etc/seccomp_policy/mediaswcodec.policy
-
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
@@ -4162,7 +4122,6 @@ vendor/lib64/libnotifyaudiohal.so
 # Sensors configs
 odm/etc/vconfig/sensor/sensor_config.json
 vendor/etc/elliptic_sensor.xml
-vendor/etc/sensors/hals.conf
 
 # Soundtrigger
 vendor/lib64/hw/android.hardware.soundtrigger3-impl.so;SYMLINK=vendor/lib64/android.hardware.soundtrigger3-impl.so
@@ -4496,11 +4455,6 @@ vendor/bin/wifitest7x
 vendor/lib64/libwifitest.so
 vendor/lib64/libwifitesttool.so
 
-# Wi-Fi configs
-vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/wpa_supplicant.conf
-vendor/etc/wifi/wpa_supplicant_overlay.conf
-
 # Miscellaneous faha
 odm/etc/vconfig/tran_avb.pubkey
 vendor/etc/bpf/filterPowerSupplyEvents.o
@@ -4543,7 +4497,6 @@ vendor/etc/MNL_Config.xml
 vendor/etc/mpe.conf
 vendor/etc/mtk_vext_info
 vendor/etc/partition_permission.sh
-vendor/etc/public.libraries.txt
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/task_profiles.json
