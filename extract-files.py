@@ -100,6 +100,12 @@ blob_fixups: blob_fixups_user_type = {
 
     'system_ext/bin/hw/android.hardware.audio.parameter_parser.service': blob_fixup()
         .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
+    'vendor/lib64/mt6789/libmtkcam_hal_aidl_common.so': blob_fixup()
+        .replace_needed('android.hardware.camera.common-V2-ndk.so', 'android.hardware.camera.common-V1-ndk.so'),
+
+
+
+
 }  # fmt: skip
 
 module = ExtractUtilsModule(
