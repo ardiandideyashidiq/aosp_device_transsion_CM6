@@ -104,8 +104,37 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.camera.common-V2-ndk.so', 'android.hardware.camera.common-V1-ndk.so'),
     'vendor/bin/mnld': blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
-
-
+    ('vendor/lib64/hw/audio.primary.mediatek.so', 'vendor/lib64/hw/audio.primary.mt6789.so'): blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V2-ndk.so', 'android.hardware.audio.effect-V3-ndk.so')
+        .replace_needed('android.hardware.bluetooth.audio-V4-ndk.so', 'android.hardware.bluetooth.audio-V5-ndk.so'),
+    'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libgpud.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/mt6789/libmtkcam_grallocutils.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V8-ndk.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/hw/mt6789/mapper.mediatek.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so': blob_fixup()
+        .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
+    'vendor/lib64/libaimemc.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libcodec2_fsr.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/mt6789/libcam.utils.sensorprovider.so': blob_fixup()
+        .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
+    'vendor/bin/hw/mt6789/android.hardware.graphics.allocator-V2-service-mediatek.mt6789': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libcodec2_vpp_AISR_plugin.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libcodec2_vpp_AIMEMC_plugin.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
 
 }  # fmt: skip
 
