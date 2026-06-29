@@ -232,41 +232,6 @@ odm/etc/vconfig/audio/TranAudioConfiguration.conf
 odm/etc/vconfig/audio/tranMagiqueSonMode.dat
 odm/lib64/libawinic_mtk_aurisys.so
 
-# Audio (FX modules)
-vendor/lib64/libdlbpreg.so
-vendor/lib64/libdmshal.so
-vendor/lib64/libdts-eagle-shared.so
-vendor/lib64/soundfx/libaecsw_mtk.so;SYMLINK=vendor/lib64/libaecsw_mtk.so
-vendor/lib64/soundfx/libaecsw.so;SYMLINK=vendor/lib64/libaecsw.so
-vendor/lib64/soundfx/libagc1sw_mtk.so;SYMLINK=vendor/lib64/libagc1sw_mtk.so
-vendor/lib64/soundfx/libagc1sw.so;SYMLINK=vendor/lib64/libagc1sw.so
-vendor/lib64/soundfx/libagc2sw_mtk.so;SYMLINK=vendor/lib64/libagc2sw_mtk.so
-vendor/lib64/soundfx/libagc2sw.so;SYMLINK=vendor/lib64/libagc2sw.so
-vendor/lib64/soundfx/libbassboostsw.so;SYMLINK=vendor/lib64/libbassboostsw.so
-vendor/lib64/soundfx/libbundleaidl.so;SYMLINK=vendor/lib64/libbundleaidl.so
-vendor/lib64/soundfx/libdlbvolaidl.so;SYMLINK=vendor/lib64/libdlbvolaidl.so
-vendor/lib64/soundfx/libdownmixaidl.so;SYMLINK=vendor/lib64/libdownmixaidl.so
-vendor/lib64/soundfx/libdtsaudioaidl.so;SYMLINK=vendor/lib64/libdtsaudioaidl.so
-vendor/lib64/soundfx/libdynamicsprocessingaidl.so;SYMLINK=vendor/lib64/libdynamicsprocessingaidl.so
-vendor/lib64/soundfx/libdynproc.so;SYMLINK=vendor/lib64/libdynproc.so
-vendor/lib64/soundfx/libenvreverbsw.so;SYMLINK=vendor/lib64/libenvreverbsw.so
-vendor/lib64/soundfx/libequalizersw.so;SYMLINK=vendor/lib64/libequalizersw.so
-vendor/lib64/soundfx/libextensioneffect.so;SYMLINK=vendor/lib64/libextensioneffect.so
-vendor/lib64/soundfx/libloudnessenhanceraidl.so;SYMLINK=vendor/lib64/libloudnessenhanceraidl.so
-vendor/lib64/soundfx/libnssw_mtk.so;SYMLINK=vendor/lib64/libnssw_mtk.so
-vendor/lib64/soundfx/libnssw.so;SYMLINK=vendor/lib64/libnssw.so
-vendor/lib64/soundfx/libpreprocessingaidl_mtk.so;SYMLINK=vendor/lib64/libpreprocessingaidl_mtk.so
-vendor/lib64/soundfx/libpreprocessingaidl.so;SYMLINK=vendor/lib64/libpreprocessingaidl.so
-vendor/lib64/soundfx/libpresetreverbsw.so;SYMLINK=vendor/lib64/libpresetreverbsw.so
-vendor/lib64/soundfx/libreverbaidl.so;SYMLINK=vendor/lib64/libreverbaidl.so
-vendor/lib64/soundfx/libspatializer.so;SYMLINK=vendor/lib64/libspatializer.so
-vendor/lib64/soundfx/libspatializeraidl.so;SYMLINK=vendor/lib64/libspatializeraidl.so
-vendor/lib64/soundfx/libswdapaidl.so;SYMLINK=vendor/lib64/libswdapaidl.so
-vendor/lib64/soundfx/libswgamedapaidl.so;SYMLINK=vendor/lib64/libswgamedapaidl.so
-vendor/lib64/soundfx/libvirtualizersw.so;SYMLINK=vendor/lib64/libvirtualizersw.so
-vendor/lib64/soundfx/libvisualizeraidl.so;SYMLINK=vendor/lib64/libvisualizeraidl.so
-vendor/lib64/soundfx/libvolumesw.so;SYMLINK=vendor/lib64/libvolumesw.so
-
 # Audio configs
 vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/a2dp_in_audio_policy_configuration.xml
@@ -442,7 +407,6 @@ vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbt-vendor.so
 vendor/lib64/libcsalgo.so
-
 
 # Bluetooth (A2DP)
 vendor/lib64/hw/audio.bluetooth.default.so;SYMLINK=vendor/lib64/audio.bluetooth.default.so
@@ -1862,7 +1826,6 @@ odm/etc/vconfig/camera/tran_camprofiles.xml
 odm/etc/vconfig/camera/trancam_filelock.json
 odm/lib64/lib_aimoon.so
 odm/lib64/lib_moondetection.so
-odm/lib64/libanc_extension_service.so
 odm/lib64/libanc_hdr_adapter_gc08a8wide_17201942_back_g97_fast.so
 odm/lib64/libanc_hdr_adapter_gc08a8wide_17201942_back_g97.so
 odm/lib64/libanc_hdr_check.so
@@ -3086,11 +3049,6 @@ odm/lib64/mt6789/s5kgn5sp_mipi_raw_tuning.so;SYMLINK=odm/lib64/s5kgn5sp_mipi_raw
 odm/lib64/mt6789/s5kjn1sub_mipi_raw_IdxMgr.so;SYMLINK=odm/lib64/s5kjn1sub_mipi_raw_IdxMgr.so
 odm/lib64/mt6789/s5kjn1sub_mipi_raw_tuning.so;SYMLINK=odm/lib64/s5kjn1sub_mipi_raw_tuning.so
 
-# Context hub
-vendor/bin/hw/android.hardware.contexthub-service.tinysys
-vendor/lib64/chre_atoms_log.so
-vendor/lib64/chremetrics-cpp.so
-
 # Display
 system_ext/lib64/vendor.mediatek.hardware.mms@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.mms@1.1.so
@@ -3145,9 +3103,11 @@ vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
 vendor/etc/init/android.hardware.graphics.composer@3.4-service.rc
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
+vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/lib64/hw/gralloc.default.so;SYMLINK=vendor/lib64/gralloc.default.so
-vendor/lib64/hw/hwcomposer.mtk_common.so;SYMLINK=vendor/lib64/hwcomposer.mtk_common.so
+vendor/lib64/hw/hwcomposer.mtk_common.so;SYMLINK=vendor/lib64/hwcomposer.mtk_common.so;DISABLE_CHECKELF
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
+vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/libaal_cust.so;SYMLINK=odm/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_sec.so
@@ -3213,14 +3173,17 @@ vendor/bin/hw/android.hardware.biometrics.face-service
 
 # Fingerprint
 odm/etc/init/fingerprint-default.rc
+odm/etc/vintf/manifest/fingerprint-default.xml
+
 odm/etc/init/vendor.anc.rc
 odm/etc/vconfig/tran_fp/tran_fp_CM6_JV0307_tm_nt37703a.json
 odm/etc/vconfig/tran_fp/tran_fp_project_info.json
-odm/etc/vintf/manifest/fingerprint-default.xml
 odm/etc/vintf/manifest/vendor.anc.fingerprint.extension.aidl_service.xml
 odm/lib64/anc.hal.so
 odm/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=odm/lib64/jiiov.fingerprint.default.so
+odm/lib64/libanc_extension_service.so
 odm/lib64/vendor.anc.fingerprint.extension-V1-ndk.so
+
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service
 vendor/etc/init/vendor.transsion.rc
 vendor/lib64/hw/tran_fingerprint.default.so;SYMLINK=vendor/lib64/tran_fingerprint.default.so
@@ -3385,11 +3348,6 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/lib64/libcarrierconfig.so
 
-# Health
-vendor/bin/hw/android.hardware.health-service.example
-vendor/etc/init/android.hardware.health-service.example.rc
-vendor/etc/vintf/manifest/android.hardware.health-service.example.xml
-
 # IPSEC
 vendor/etc/ipsec/ipsec.conf
 vendor/etc/ipsec/ipsec.d/cacerts/DigiCertGlobalRootCA.crt
@@ -3430,9 +3388,6 @@ vendor/lib64/libthha.so
 vendor/lib64/hw/local_time.default.so;SYMLINK=vendor/lib64/local_time.default.so
 
 # Media
-#system_ext/lib64/libged_sys.so
-#system_ext/lib64/libsf_cpupolicy.so
-#system_ext/lib64/libstagefright_wfd_mtk.so
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/vintf/manifest/manifest_media_c2_default.xml:vendor/etc/vintf/manifest/manifest_media.c2-mediatek-64b.xml
@@ -3441,9 +3396,6 @@ vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_soft_ac4dec.so
-vendor/lib64/libcodec2_soft_ddpdec.so
-vendor/lib64/libcodec2_store_dolby.so
 vendor/lib64/libcodec2_vpp_AIMEMC_plugin.so
 vendor/lib64/libcodec2_vpp_AISR_plugin.so
 vendor/lib64/libcodec2_vpp_chdr_plugin.so
@@ -3456,18 +3408,6 @@ vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/vpp_hdrmeta_handler_plugin.so
-
-# Media (Dolby)
-odm/bin/hw/vendor.dolby.dms.service
-odm/bin/hw/vendor.dolby.media.c2-default-service-dax
-odm/etc/init/dms-service.rc
-odm/etc/init/vendor.dolby.media.c2-default-service-dax.rc
-odm/etc/vintf/manifest/dms-service.xml
-odm/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
-vendor/lib64/libdapparamstorage.so
-vendor/lib64/libdeccfg.so
-vendor/lib64/vendor.dolby.dms-V1-ndk.so
-vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
 # Media configs
 odm/etc/vconfig/media/media_codecs_dolby_audio.xml
@@ -4095,15 +4035,8 @@ vendor/lib64/libwifitesttool.so
 # Miscellaneous faha
 odm/etc/vconfig/tran_avb.pubkey
 vendor/etc/bpf/filterPowerSupplyEvents.o
-vendor/etc/build_flags.json
 vendor/etc/cgroups.json
 vendor/etc/command.csv
-vendor/etc/fstab.emmc
-vendor/etc/fstab.enableswap
-vendor/etc/fstab.mt6789
-vendor/etc/fstb.cfg
-vendor/etc/init.insmod.mt6789.cfg
-vendor/etc/init.insmod.touch.cfg
 vendor/etc/init/bootperf.rc
 vendor/etc/init/chg_sence_init.rc
 vendor/etc/init/chipinfo_init.rc
@@ -4125,29 +4058,18 @@ vendor/etc/init/muxreport.rc
 vendor/etc/init/networksetting.rc
 vendor/etc/init/storagev.rc
 vendor/etc/init/touch_boost.rc
-vendor/etc/init/vndservicemanager.rc
 vendor/etc/META_dynamic.ds
-vendor/etc/mkshrc
 vendor/etc/MNL_Config.xml
 vendor/etc/mpe.conf
 vendor/etc/mtk_vext_info
-vendor/etc/partition_permission.sh
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/task_profiles.json
 vendor/etc/tdt.conf
-vendor/etc/ueventd.rc
-vendor/etc/vconfig/aisupporter/default_predshellThermal_lr.json
-vendor/etc/vconfig/cloudengine/0000000000/0000000000
-vendor/etc/vconfig/ecc_list_tran2.xml
-vendor/etc/vconfig/gift/arc.ini
-vendor/etc/vconfig/scaler/resolution_tuner_app_list.xml
 vendor/etc/vendor-apns-conf.xml
 vendor/etc/VideoLog_dynamic.ds
 vendor/etc/vintf/manifest/CommandService.xml
-vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/etc/xgf.cfg
-vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
 vendor/lib64/hw/mtkflp.default.so;SYMLINK=vendor/lib64/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so;SYMLINK=vendor/lib64/mtkgeofence.default.so
@@ -4160,7 +4082,6 @@ vendor/lib64/libcapctrl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcvsd_mtk.so
-vendor/lib64/libdlbdsservice.so
 vendor/lib64/libdtsdsec.so
 vendor/lib64/libdynamiclog.so
 vendor/lib64/libfft_vendor.so
@@ -4194,17 +4115,11 @@ vendor/lib64/libSpecific_oem.so
 vendor/lib64/libstfaceunlockppl.so
 vendor/lib64/libswtcc.so
 vendor/lib64/libtflite_mtk.so
-vendor/lib64/libtnev.so
-vendor/lib64/libTranCmd.so
 vendor/lib64/libtranslator_mapi_v3.0.so
 vendor/lib64/libtranslator_mdmi_v2.8.2.so
 vendor/lib64/libtranslator_utils.so
 vendor/lib64/libtranssion_forkexecwrap.so
 vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
-
-# Transsion Battery Health Log
-vendor/bin/tran_healthinfo_upload
-vendor/etc/init/init.tran_healthinfo_upload.rc
 
 # Transsion Camera Server
 vendor/bin/hw/trancamserver
@@ -4213,172 +4128,17 @@ vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver-V1-ndk.so
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 
-# Transsion Charge Service
-vendor/bin/hw/vendor.hardware.trancharge-service
-vendor/etc/init/vendor.hardware.trancharge-service.example.rc
-vendor/etc/vintf/manifest/vendor.hardware.trancharge-service.example.xml
-
-# Transsion Data Center
-vendor/bin/hw/trandatacenter
-vendor/etc/init/init.trandatacenter.rc
-vendor/lib64/libtranDatacenter.so
-vendor/lib64/vendor.transsion.hardware.trandatacenter-V1-ndk.so
-vendor/lib64/vendor.transsion.hardware.trandatacenter@1.0.so
-
-# Transsion Face
-vendor/etc/init/face-default.rc
-vendor/etc/vintf/manifest/face-default.xml
-vendor/lib64/hw/face.default.so;SYMLINK=vendor/lib64/face.default.so
-
-# Transsion FAC
-odm/etc/vconfig/factory.ini
-odm/etc/vconfig/tranfac/aidl/default/NvBlock.json
-odm/etc/vconfig/tranfac/aidl/default/SensorNv.json
-odm/etc/vconfig/tranfac/feature/FeatureAuto.json
-odm/etc/vconfig/tranfac/feature/Sensor.json
-odm/etc/vconfig/tranfac/res/aging_video.mp4
-odm/etc/vconfig/tranfac/res/lab_audio.mp3
-odm/etc/vconfig/tranfac/sign/Signature.json
-odm/lib64/libTranfacOverlay.so
-vendor/bin/factory
-vendor/bin/hw/vendor.transsion.hardware.tranfacaidl-service
-vendor/bin/tranfac_native
-vendor/etc/init/tranfac_native.rc
-vendor/etc/init/vendor.transsion.hardware.tranfacaidl-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.tranfacaidl-service.xml
-vendor/framework/com.transsion.tranfacsdk.jar
-vendor/lib64/libTranfacFunction.so
-vendor/lib64/libTranfacUtils.so
-vendor/lib64/vendor.transsion.hardware.tranfacaidl-V1-ndk.so
-
-# Transsion Fast Switch
-vendor/bin/jxnosfastswitch
-vendor/etc/init/FastSwitch.rc
-vendor/etc/vintf/manifest/FastSwitch.xml
-vendor/lib64/vendor.mediatek.hardware.nps.nos.fastswitch-V1-ndk.so
-
-# Transsion HAP
-vendor/bin/hw/vendor.transsion.hardware.security.hap@1.0-service
-vendor/etc/init/vendor.transsion.hardware.security.hap@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.security.hap.xml
-vendor/lib64/vendor.transsion.hardware.security.hap-V1-ndk.so
-
 # Transsion Hardware Info
-vendor/bin/hw/vendor.transsion.tranHwInfo-service
-vendor/etc/init/vendor.transsion.tranHwInfo-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.tranHwInfo.xml
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/vendor.transsion.tranHwInfo-V1-ndk.so
-
-# Transsion HP
-vendor/bin/hw/vendor.transsion.hardware.tranthp-service
-vendor/bin/thp_debug_tool
-vendor/lib64/tran_thp_hal.so
-vendor/lib64/vendor.transsion.hardware.tranthp-V1-ndk.so
-
-# Transsion LED
-vendor/bin/hw/vendor.hardware.tranled-service
-vendor/etc/init/vendor.hardware.tranled-service.example.rc
-vendor/etc/vintf/manifest/vendor.hardware.tranled-service.example.xml
 
 # Transsion Log
-vendor/bin/hw/tranlog
-vendor/etc/init/init.tranlog.rc
 vendor/lib64/libtranlog.so
 
-# Transsion Logging Configuration
-vendor/bin/hw/tranlogconfig
-vendor/etc/init/init.tranlogconfig.rc
-vendor/lib64/vendor.transsion.hardware.tranlog-V1-ndk.so
-vendor/lib64/vendor.transsion.hardware.tranlogconfig-V1-ndk.so
-
-# Transsion Memory Fusion
-vendor/bin/memfusion
-vendor/etc/init/init.memfusion.rc
-vendor/etc/init/memfusion.rc
-vendor/etc/vconfig/memfusion2/fstab.enableswap
-vendor/etc/vconfig/memfusion2/fstab.enableswap_wb
-
-# Transsion NFC
-vendor/bin/hw/vendor.transsion.nfc-service
-vendor/etc/init/vendor.transsion.nfc-service.rc
-
-# Transsion Paytrigger
-vendor/bin/hw/vendor.transsion.hardware.security.paytrigger@1.0-service
-vendor/etc/init/vendor.transsion.hardware.security.paytrigger@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.security.paytrigger@1.0-service.xml
-vendor/lib64/vendor.transsion.hardware.security.paytrigger-V1-ndk.so
-
 # Transsion Performance Scheduler
-vendor/bin/hw/vendor.transsion.performance.sched.aidl-service
-vendor/etc/init/vendor.transsion.performance.sched.aidl-service.rc
-vendor/etc/vconfig/tran_sched/trans_sched_config.xml
-vendor/etc/vintf/manifest/trans_sched_device.xml
 vendor/lib64/vendor.transsion.performance.sched.aidl-V2-ndk.so
 
-# Transsion Radio Net
-vendor/bin/hw/tranradionet
-vendor/etc/init/tranradionet-default.rc
-vendor/etc/vintf/manifest/tranradionet-default.xml
-vendor/lib64/libtranradionet_mtk.so
-vendor/lib64/vendor.transsion.hardware.trannet-V5-ndk.so
-vendor/lib64/vendor.transsion.hardware.tranradio-V11-ndk.so
-
 # Transsion Screen Info
-vendor/bin/hw/vendor.transsion.hardware.screeninfo-service
-vendor/etc/init/vendor.transsion.hardware.screeninfo-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.screeninfo-service.xml
 vendor/lib64/libscreeninfo.so
 vendor/lib64/libscreeninfoaidlwrapper.so
 vendor/lib64/vendor.transsion.hardware.screeninfo-V1-ndk.so
-
-# Transsion Storage
-vendor/bin/hw/vendor.aidlstorage@1.0-service
-vendor/etc/vintf/manifest/manifest_storage.xml
-vendor/lib64/vendor.transsion.hardware.transtorage.storage-V1-ndk.so
-
-# Transsion TNE
-vendor/bin/hw/vendor.tne@1.0-service
-vendor/etc/init/tnev.rc
-vendor/etc/vintf/manifest/manifest_tneengine.xml
-vendor/lib64/vendor.transsion.hardware.tne.tneengine-V1-ndk.so
-vendor/lib64/vendor.transsion.hardware.tne.tneengine@1.0.so
-
-# Transsion TouchPanel
-vendor/bin/hw/vendor.hardware.trantp-service
-vendor/etc/init/vendor.hardware.trantp-service.rc
-vendor/etc/vintf/manifest/vendor.hardware.trantp-service.xml
-
-# Transsion Verification | Device Authentication
-vendor/bin/hw/vendor.transsion.hardware.security.deviceauthen@2.0-service
-vendor/etc/init/vendor.transsion.hardware.security.deviceauthen@2.0-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.security.deviceauthen@2.0.xml
-vendor/lib64/libdeviceauthen.so
-vendor/lib64/vendor.transsion.hardware.security.deviceauthen-V1-ndk.so
-
-# Transsion Verification | Files
-vendor/bin/hw/vendor.transsion.hardware.security.keyfilesvfy@1.0-service
-vendor/etc/init/vendor.transsion.hardware.security.keyfilesvfy@1.0-service.rc
-vendor/lib64/libkeyfilesvfy.so
-vendor/lib64/vendor.transsion.hardware.security.keyfilesvfy-V1-ndk.so
-
-# Transsion Verification | Partitions
-vendor/bin/hw/vendor.transsion.hardware.security.trancriticalparavfy-service
-vendor/bin/verify_para
-vendor/etc/init/vendor.transsion.hardware.security.trancriticalparavfy@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.security.trancriticalparavfy@1.0-service.xml
-vendor/lib64/libtran_sec_log.so
-vendor/lib64/libtrancrypto.so
-vendor/lib64/libtvrfy.so
-vendor/lib64/vendor.transsion.hardware.security.trancriticalparavfy-V1-ndk.so
-
-## Transsion Verification | RPMB
-vendor/bin/hw/vendor.transsion.hardware.security.rpmbservice@2.0-service
-vendor/bin/meta_tst
-vendor/bin/verify_rpmb
-vendor/etc/init/vendor.transsion.hardware.security.rpmbservice@2.0-service.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.security.rpmbservice@2.0-service.xml
-vendor/lib64/librpmb_ca.so
-vendor/lib64/vendor.transsion.hardware.security.rpmbservice-V1-ndk.so
-
