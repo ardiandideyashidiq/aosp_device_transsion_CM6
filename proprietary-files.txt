@@ -3164,7 +3164,6 @@ vendor/apex/com.android.hardware.cas.apex
 vendor/apex/com.google.android.widevine.nonupdatable.apex
 vendor/apex/com.mediatek.oemcrypto.apex
 vendor/lib64/liboemcrypto.so
-#vendor/lib64/mediacas/libclearkeycasplugin.so;SYMLINK=vendor/lib64/libclearkeycasplugin.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so;SYMLINK=vendor/lib64/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so;SYMLINK=vendor/lib64/libmockdrmcryptoplugin.so
 
