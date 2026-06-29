@@ -1,19 +1,19 @@
 # Unpinned blobs from CM6-user 16 BP2A.250605.031.A3 82815 release-keys
 
 # AEE
-vendor/bin/aee_aedv64_v2
-vendor/bin/aee_dumpstatev_v2
-vendor/bin/aeev_v2
-vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
-vendor/bin/hw/vendor.mediatek.hardware.aee@V1-service
-vendor/etc/aee-commit
-vendor/etc/aee-config
-vendor/etc/init/aee_aedv64_v2.rc
-vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
-vendor/etc/init/vendor.mediatek.hardware.aee@V1-service.rc
-vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
-vendor/lib64/vendor.mediatek.hardware.aee@1.1.so
+#vendor/bin/aee_aedv64_v2
+#vendor/bin/aee_dumpstatev_v2
+#vendor/bin/aeev_v2
+#vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
+#vendor/bin/hw/vendor.mediatek.hardware.aee@V1-service
+#vendor/etc/aee-commit
+#vendor/etc/aee-config
+#vendor/etc/init/aee_aedv64_v2.rc
+#vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
+#vendor/etc/init/vendor.mediatek.hardware.aee@V1-service.rc
+#vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
+#vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
+#vendor/lib64/vendor.mediatek.hardware.aee@1.1.so
 
 # AEGIS
 vendor/bin/hw/aegis
