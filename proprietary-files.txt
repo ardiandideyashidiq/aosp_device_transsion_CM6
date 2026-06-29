@@ -4109,7 +4109,7 @@ vendor/lib64/libnputils.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpn560_fw.so
-vendor/lib64/libremosaic_wrapper.so;SYMLINK=odm/lib64/libremosaic_wrapper.so;DISABLE_CHECKELF
+odm/lib64/libremosaic_wrapper.so;SYMLINK=vendor/lib64/libremosaic_wrapper.so;DISABLE_CHECKELF
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libSpecific_oem.so
 vendor/lib64/libstfaceunlockppl.so
