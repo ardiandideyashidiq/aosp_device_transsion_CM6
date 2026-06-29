@@ -2972,7 +2972,7 @@ odm/lib64/libpixsmart_ns.so
 odm/lib64/libPortraitEnhance_64.so;DISABLE_CHECKELF
 odm/lib64/libremosaiclib.so;DISABLE_CHECKELF
 odm/lib64/librmsclib1.so
-odm/lib64/libsegmention.so
+odm/lib64/libsegmention.so;DISABLE_CHECKELF
 odm/lib64/libsegmentionPre.so
 odm/lib64/libsmartdetector.so
 odm/lib64/libssmobile_moment.so
