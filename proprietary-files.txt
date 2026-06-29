@@ -52,7 +52,7 @@ vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/libmtkspparser_swb.so
 vendor/lib64/libmtkspparser.so
 vendor/lib64/libocs_mtk_arsi.so
-vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libtouch_rejection.so
 vendor/lib64/libTransNS.so
