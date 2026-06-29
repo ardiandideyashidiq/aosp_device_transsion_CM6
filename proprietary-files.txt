@@ -1,35 +1,5 @@
 # Unpinned blobs from CM6-user 16 BP2A.250605.031.A3 82815 release-keys
 
-# AEE
-#vendor/bin/aee_aedv64_v2
-#vendor/bin/aee_dumpstatev_v2
-#vendor/bin/aeev_v2
-#vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
-#vendor/bin/hw/vendor.mediatek.hardware.aee@V1-service
-#vendor/etc/aee-commit
-#vendor/etc/aee-config
-#vendor/etc/init/aee_aedv64_v2.rc
-#vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
-#vendor/etc/init/vendor.mediatek.hardware.aee@V1-service.rc
-#vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
-#vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
-#vendor/lib64/vendor.mediatek.hardware.aee@1.1.so
-
-# AEGIS
-vendor/bin/hw/aegis
-vendor/etc/init/aegis.rc
-vendor/etc/vconfig/aegis/config_frequency.xml
-vendor/etc/vconfig/aegis/config_judgement.xml
-vendor/etc/vconfig/aegis/config_subscriptions.xml
-vendor/etc/vintf/manifest/manifest_aegis.xml
-vendor/lib64/libaegis_clientv.so
-vendor/lib64/vendor.transsion.hardware.aegis-V1-ndk.so
-
-# APMONITOR
-vendor/lib64/libapmonitor_vendor.so
-vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
-
 # APU
 vendor/lib64/APUWareAisteAidlServer.so
 vendor/lib64/APUWareApusysAidlServer.so
@@ -3229,11 +3199,6 @@ odm/etc/vconfig/display/ccorr_golden3.conf
 odm/etc/vconfig/display/ccorr_stand.conf
 odm/etc/vconfig/display/nt37703a_fhdp_dsi_vdo_dsc_tm_tm_120hz_cm6_cust_color.xml
 
-# DMC
-vendor/bin/dmc_core
-vendor/etc/init/dmc_core.rc
-vendor/lib64/vendor.mediatek.hardware.dmc-V1-ndk.so
-
 # DRM
 vendor/apex/com.android.hardware.cas.apex
 vendor/apex/com.google.android.widevine.nonupdatable.apex
@@ -4154,7 +4119,6 @@ vendor/etc/init/init.storage_feature_cloudctl.rc
 vendor/etc/init/init.touch.rc
 vendor/etc/init/init.tp.rc
 vendor/etc/init/kswapd0_bind.rc
-vendor/etc/init/mtk_pkm_service.rc
 vendor/etc/init/mtk_storageproxyd.rc
 vendor/etc/init/mtklog.rc
 vendor/etc/init/muxreport.rc
@@ -4223,7 +4187,6 @@ vendor/lib64/libnpagent.so
 vendor/lib64/libnputils.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
 vendor/lib64/libpixelflinger.so
-vendor/lib64/libpkm.so
 vendor/lib64/libpn560_fw.so
 vendor/lib64/libremosaic_wrapper.so;SYMLINK=odm/lib64/libremosaic_wrapper.so
 vendor/lib64/librt_extamp_intf.so
