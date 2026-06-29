@@ -19,13 +19,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.connectivity.common.rc",
-    src: "etc/init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.connectivity.rc",
     src: "etc/init.connectivity.rc",
     sub_dir: "init/hw",
@@ -47,6 +40,13 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.modem.rc",
     src: "etc/init.modem.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6789.graphics.rc",
+    src: "etc/init.mt6789.graphics.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
@@ -101,8 +101,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init_connectivity.rc",
+    name: "init.zram.rc",
+    src: "etc/init.zram.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
