@@ -139,7 +139,7 @@ blob_fixups: blob_fixups_user_type = {
 
     'odm/lib64/libTranssionTone.so': blob_fixup()
         .add_needed('libc++_shared.so'),
-    ('odm/lib64/libanc_single_rt_bokeh.so', 'vendor/lib64/libmcve.so', 'vendor/lib64/mt6789/libneuron_adapter_mgvi.so', 'vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so'): blob_fixup()
+    ('odm/lib64/libanc_single_rt_bokeh.so', 'vendor/lib64/libmcve.so', 'vendor/lib64/mt6789/libneuron_adapter_mgvi.so', 'vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/libtflite_mtk.so'): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_describe')
