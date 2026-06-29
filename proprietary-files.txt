@@ -3172,24 +3172,24 @@ vendor/lib64/mediadrm/libmockdrmcryptoplugin.so;SYMLINK=vendor/lib64/libmockdrmc
 vendor/bin/hw/android.hardware.biometrics.face-service
 
 # Fingerprint
-odm/etc/init/fingerprint-default.rc
-odm/etc/vintf/manifest/fingerprint-default.xml
+#odm/etc/init/fingerprint-default.rc
+#odm/etc/vintf/manifest/fingerprint-default.xml
 
-odm/etc/init/vendor.anc.rc
-odm/etc/vconfig/tran_fp/tran_fp_CM6_JV0307_tm_nt37703a.json
-odm/etc/vconfig/tran_fp/tran_fp_project_info.json
-odm/etc/vintf/manifest/vendor.anc.fingerprint.extension.aidl_service.xml
-odm/lib64/anc.hal.so
-odm/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=odm/lib64/jiiov.fingerprint.default.so
-odm/lib64/libanc_extension_service.so
-odm/lib64/vendor.anc.fingerprint.extension-V1-ndk.so
+#odm/etc/init/vendor.anc.rc
+#odm/etc/vconfig/tran_fp/tran_fp_CM6_JV0307_tm_nt37703a.json
+#odm/etc/vconfig/tran_fp/tran_fp_project_info.json
+#odm/etc/vintf/manifest/vendor.anc.fingerprint.extension.aidl_service.xml
+#odm/lib64/anc.hal.so
+#odm/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=odm/lib64/jiiov.fingerprint.default.so
+#odm/lib64/libanc_extension_service.so
+#odm/lib64/vendor.anc.fingerprint.extension-V1-ndk.so
 
-vendor/bin/hw/android.hardware.biometrics.fingerprint-service
-vendor/etc/init/vendor.transsion.rc
-vendor/lib64/hw/tran_fingerprint.default.so;SYMLINK=vendor/lib64/tran_fingerprint.default.so
-vendor/lib64/libtran_hal.so
-vendor/lib64/vendor.hardware.biometrics.extension.fingerprint-V1-ndk.so
-vendor/lib64/vendor.transsion.hardware.biometrics.fingerprint-V1-ndk.so
+#vendor/bin/hw/android.hardware.biometrics.fingerprint-service
+#vendor/etc/init/vendor.transsion.rc
+#vendor/lib64/hw/tran_fingerprint.default.so;SYMLINK=vendor/lib64/tran_fingerprint.default.so
+#vendor/lib64/libtran_hal.so
+#vendor/lib64/vendor.hardware.biometrics.extension.fingerprint-V1-ndk.so
+#vendor/lib64/vendor.transsion.hardware.biometrics.fingerprint-V1-ndk.so
 
 # Firmware
 odm/firmware/aw87xxx_acf.bin
@@ -4122,9 +4122,9 @@ vendor/lib64/libtranssion_forkexecwrap.so
 vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
 
 # Transsion Camera Server
-vendor/bin/hw/trancamserver
-vendor/etc/init/trancamserver.rc
-vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
+#vendor/bin/hw/trancamserver
+#vendor/etc/init/trancamserver.rc
+#vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver-V1-ndk.so
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 
