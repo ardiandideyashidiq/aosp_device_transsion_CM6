@@ -12,9 +12,26 @@ import /vendor/etc/init/hw/init.zram.rc
 import /vendor/etc/init/hw/init.modem.rc
 # *** DO NOT import the new rc file after this line ***
 
+on early-init
+    write /proc/bootprof "INIT:early-init"
+    setprop vendor.all.modules.ready 1
+
+on early-init && property:ro.build.type=eng
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+    write /sys/power/pm_print_times 0
+    setprop persist.dbg.keep_debugfs_mounted true
+
+on early-init && property:ro.build.type=userdebug
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+    setprop persist.dbg.keep_debugfs_mounted true
+
 on init
     # if primary storage is physical, set ro.vold.primary_physical to 1
     # setprop ro.vold.primary_physical 1
+
+    write /proc/bootprof "INIT:init"
 
 # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608
@@ -25,6 +42,19 @@ on init
     write /dev/blkio/background/blkio.weight 200
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
+
+    chown root system /proc/lk_env
+    chmod 0660 /proc/lk_env
+
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-7
+
+on late-init
+    write /proc/bootprof "INIT:late-init"
+    write /sys/kernel/rcu_expedited 1
 
 # mount different fs start
 
@@ -79,7 +109,24 @@ on post-fs
     chown root system /proc/ccci_dump
 
 on post-fs-data
+    write /proc/bootprof "INIT:post-fs-data"
     wait_for_prop vendor.all.modules.ready 1
+    write /proc/bootprof "modprobe: Load_Module_DONE"
+
+    # Disable watermark boost
+    write /proc/sys/vm/watermark_boost_factor 0
+
+    # boot time fs tune
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sdc/queue/read_ahead_kb 2048
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/dm-2/queue/read_ahead_kb 2048
+    write /sys/block/dm-3/queue/read_ahead_kb 2048
+    write /sys/block/dm-4/queue/read_ahead_kb 2048
+    write /sys/block/dm-5/queue/read_ahead_kb 2048
 
     chown system system /mnt/vendor/nvcfg
     chmod 0771 /mnt/vendor/nvcfg
@@ -239,50 +286,44 @@ on post-fs-data
     #ITD:add Portrait Architecture by ye.li5 20230810 end
 
     #Camera
+    chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
     chmod 0660 /dev/camera-mem
     chmod 0660 /dev/camera-dip
+    chmod 0660 /dev/camera-tsf
+    chmod 0660 /dev/camera-mfb
     chmod 0660 /dev/camera-rsc
+    chmod 0660 /dev/camera-owe
     chmod 0660 /dev/camera-fdvt
+    chmod 0660 /dev/camera-wpe
+    chmod 0660 /dev/camera-pipemgr
     chmod 0660 /dev/kd_camera_hw
     chmod 0660 /dev/seninf
     chmod 0660 /dev/seninf_n3d
+    chmod 0660 /dev/kd_camera_hw_bus2
     chmod 0660 /dev/flashlight
     chmod 0660 /dev/MAINAF
+    chmod 0660 /dev/apusys
+    write /sys/module/mtk_imgsys_cmdq/parameters/imgsys_fine_grain_dvfs_en 1
 
-#ITD: Modify Camera By Yingji.Wang 220426 Start
-    #DualCam
-    mkdir /data/vendor/arcsoft 0777 system system
-    #tranDualCam
-    mkdir /data/vendor/multicam  0777 system system
-    mkdir /data/vendor/multicam/dualcam  0777 system system
-    #tranSAT
-    mkdir /data/vendor/multicam/sat 0777 system system
-#ITD: Modify Camera By Yingji.Wang 220426 end
-
-#ITD:modify by camera driver junfeng.qin5 20220501 start
-    #MEG-fullHDR
-    mkdir /data/vendor/meg_working_dir 0777 system system
-    mkdir /data/vendor/meg_working_dir/anc_fullhdr 0777 system system
-    #MEG-HUMANEFFECT
-    mkdir /data/vendor/meghumaneffect 0777 system system
-    #watermark 2.0
-    mkdir /data/vendor/camera_watermark 0777 system system
-#ITD:modify by camera driver junfeng.qin5 20220501 end
-
+    chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-mem
     chown system camera /dev/camera-dip
+    chown system camera /dev/camera-mfb
     chown system camera /dev/camera-rsc
+    chown system camera /dev/camera-owe
+    chown system camera /dev/camera-tsf
     chown system camera /dev/camera-fdvt
+    chown system camera /dev/camera-wpe
+    chown system camera /dev/camera-pipemgr
     chown system camera /dev/kd_camera_hw
     chown system camera /dev/seninf
     chown system camera /dev/seninf_n3d
+    chown system camera /dev/kd_camera_hw_bus2
     chown system camera /dev/flashlight
     chown system camera /dev/MAINAF
-#fake dual camera
-    chown root root /sys/class/main2_light/main2_light/main2_light
-    chmod 0666 /sys/class/main2_light/main2_light/main2_light
+    chown system camera /dev/apusys
     chown system camera /sys/kernel/debug/mtk_cam_dbg/0/ctrl
     chown system camera /sys/kernel/debug/mtk_cam_dbg/1/ctrl
     chown system camera /sys/kernel/debug/mtk_cam_dbg/2/ctrl
@@ -323,13 +364,48 @@ on post-fs-data
 	
 # End of adding by MTK drivers
 # -----------------------
-on boot
-    # start EAS+
-    write /sys/devices/system/cpu/eas/enable 1
+on zygote-start
+    write /proc/bootprof "INIT:zygote-start"
+
+on early-boot
+    write /proc/bootprof "INIT:early-boot"
+    verity_update_state
+
+    chown root log /proc/ccci_sib
+    chown root system /proc/ccci_dump
+    chown root system /proc/ccci_lp_mem
+
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
 
-    #BSP:add for charger&led midtest by lei.shi5 20220505 start
+on boot
+    write /proc/bootprof "INIT:boot"
+
+    write /proc/sys/vm/dirty_writeback_centisecs 300
+    chmod 0660 /sys/power/autosleep
+
+    chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
+    chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chown root   system /sys/kernel/debug/binder/transaction_log_enable
+    chown root   system /sys/kernel/debug/binder/perf_evalue
+    chown system system /sys/devices/system/cpu/rq-stats/htasks_thresh
+    chmod 0660 /sys/devices/system/cpu/rq-stats/htasks_thresh
+    chown system system /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
+    chmod 0660 /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
+
+    chown system /sys/module/mlog/parameters/do_mlog
+    chown system /sys/module/mlog/parameters/timer_intval
+
+    chown root   radio  /sys/class/leds/lcd-backlight/duty
+    chown root   radio  /sys/class/leds/lcd-backlight/div
+    chown system system /sys/class/leds/lcd-backlight/trigger
+    chown system system /sys/class/leds/red/trigger
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/blue/trigger
+
+    # charger and LED nodes
     chmod 0666 /dev/MT_pmic_adc_cali
     chmod 0666 /sys/class/leds/red/brightness
     chmod 0666 /sys/class/leds/blue/brightness
@@ -338,51 +414,141 @@ on boot
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery/CHG_CAPACITY_TEST
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery/tran_set_current
     chmod 0666 /sys/devices/platform/charger/Charger_Type
-	chown system system /sys/devices/platform/charger/tran_aichg_bigdata
-	chmod 0666 /sys/devices/platform/charger/tran_aichg_bigdata
-    #BSP:add for charger&led midtest by lei.shi5 20220505 end
-    #MG-CHG(Bypass):wireless function by yongqing 20221008 start
+    chown system system /sys/devices/platform/charger/tran_aichg_bigdata
+    chmod 0666 /sys/devices/platform/charger/tran_aichg_bigdata
     chmod 0666 /sys/wireless/wireless/Rx/brushFW
     chmod 0666 /sys/wireless/wireless/Rx/reverse_charger
     chmod 0666 /sys/wireless/wireless/Rx/rxdetect
     chmod 0666 /sys/wireless/wireless/Rx/fake_rx_detect
-    #MG-CHG(Bypass):wireless function by yongqing 20221008 start
-
-
-    #MG-CHG(Bypass):bypass function by yongqing 20221008 start
     chown system system /sys/devices/platform/charger/tran_aichg_disable_charger
     chmod 0666 /sys/devices/platform/charger/tran_aichg_disable_charger
     chown system system /sys/devices/platform/charger/bypass_charger
     chmod 0666 /sys/devices/platform/charger/bypass_charger
-	chown system system /sys/devices/platform/odm/odm:smart_charging/smart_charging
-	chmod 0664 /sys/devices/platform/odm/odm:smart_charging/smart_charging
-    #MG-CHG(Bypass):bypass function by yongqing 20221008 end
-
-	chown system system /sys/led/led/tran_led_cmd
-	chmod 0666 /sys/led/led/tran_led_cmd
-
-	chown system system /sys/led/led/tran_led_check
-	chmod 0666 /sys/led/led/tran_led_check
-
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    chown root   system /sys/kernel/debug/binder/transaction_log_enable
-    chown root   system /sys/kernel/debug/binder/perf_evalue
-
-    chown system system /sys/class/leds/lcd-backlight/trigger
-
-#ITD:add flashlight by isp team 20220412 start
+    chown system system /sys/devices/platform/odm/odm:smart_charging/smart_charging
+    chmod 0664 /sys/devices/platform/odm/odm:smart_charging/smart_charging
+    chown system system /sys/led/led/tran_led_cmd
+    chmod 0666 /sys/led/led/tran_led_cmd
+    chown system system /sys/led/led/tran_led_check
+    chmod 0666 /sys/led/led/tran_led_check
     chmod 0666 /sys/devices/virtual/torch/torch/torch_level
     chmod 0666 /sys/devices/virtual/sub_torch/sub_torch/sub_torch_level
-#ITD:add flashlight by isp team 20220412 end
+
     # gauge symbolic
-    symlink /sys/devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-gauge /dev/gauge
+    symlink /sys/kernel/gauge /dev/gauge
+    symlink /sys/kernel/gauge2 /dev/gauge2
 
     # Permission for hibernation
     chown radio system /sys/power/tuxonice
     chown radio system /sys/power/tuxonice/do_hibernate
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
+
+    chown system system /sys/power/sb_state
+    chmod 0660 /sys/power/sb_state
+
+# HMP CPU hotplug strategy
+    chown system system /proc/hps/num_base_perf_serv
+    chmod 0660 /proc/hps/num_base_perf_serv
+    chown system system /proc/hps/num_limit_power_serv
+    chmod 0660 /proc/hps/num_limit_power_serv
+    chown system system /proc/hps/num_limit_ultra_power_saving
+    chmod 0660 /proc/hps/num_limit_ultra_power_saving
+    chown system system /proc/hps/down_threshold
+    chmod 0660 /proc/hps/down_threshold
+    chown system system /proc/hps/up_threshold
+    chmod 0660 /proc/hps/up_threshold
+    chown system system /proc/hps/rush_boost_enabled
+    chmod 0660 /proc/hps/rush_boost_enabled
+    chown system system /proc/hps/heavy_task_enabled
+    chmod 0660 /proc/hps/heavy_task_enabled
+    chown system system /proc/hps/power_mode
+    chmod 0660 /proc/hps/power_mode
+    chown system system /proc/hps/up_times
+    chmod 0660 /proc/hps/up_times
+    chown system system /proc/hps/down_times
+    chmod 0660 /proc/hps/down_times
+
+# PPM
+    chown system system /proc/ppm/mode
+    chmod 0660 /proc/ppm/mode
+    chown system system /proc/ppm/policy/perfserv_min_perf_idx
+    chmod 0440 /proc/ppm/policy/perfserv_min_perf_idx
+    chown system system /proc/ppm/policy/perfserv_max_perf_idx
+    chmod 0440 /proc/ppm/policy/perfserv_max_perf_idx
+    chown system system /proc/ppm/policy/perfserv_perf_idx
+    chmod 0660 /proc/ppm/policy/perfserv_perf_idx
+    chown system system /proc/ppm/policy/userlimit_min_cpu_freq
+    chmod 0660 /proc/ppm/policy/userlimit_min_cpu_freq
+    chown system system /proc/ppm/policy/userlimit_max_cpu_freq
+    chmod 0660 /proc/ppm/policy/userlimit_max_cpu_freq
+    chown system system /proc/ppm/policy/userlimit_min_cpu_core
+    chmod 0660 /proc/ppm/policy/userlimit_min_cpu_core
+    chown system system /proc/ppm/policy/userlimit_max_cpu_core
+    chmod 0660 /proc/ppm/policy/userlimit_max_cpu_core
+    chown system system /proc/ppm/policy/userlimit_cpu_core
+    chmod 0660 /proc/ppm/policy/userlimit_cpu_core
+    chown system system /proc/ppm/policy/userlimit_cpu_freq
+    chmod 0660 /proc/ppm/policy/userlimit_cpu_freq
+    chown system system /proc/ppm/dump_cluster_0_dvfs_table
+    chmod 0440 /proc/ppm/dump_cluster_0_dvfs_table
+    chown system system /proc/ppm/dump_cluster_1_dvfs_table
+    chmod 0440 /proc/ppm/dump_cluster_1_dvfs_table
+    chown system system /proc/ppm/dump_cluster_2_dvfs_table
+    chmod 0440 /proc/ppm/dump_cluster_2_dvfs_table
+    chown system system /proc/ppm/root_cluster
+    chmod 0660 /proc/ppm/root_cluster
+    chown system system /proc/ppm/policy/hica_variant
+    chmod 0660 /proc/ppm/policy/hica_variant
+    chown system system /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
+    chmod 0660 /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
+
+# cpu_loading
+    chown system system /proc/cpu_loading/onoff
+    chmod 0664 /proc/cpu_loading/onoff
+    chown system system /proc/cpu_loading/overThrhld
+    chmod 0664 /proc/cpu_loading/overThrhld
+    chown system system /proc/cpu_loading/poltime_nsecs
+    chmod 0664 /proc/cpu_loading/poltime_nsecs
+    chown system system /proc/cpu_loading/poltime_secs
+    chmod 0664 /proc/cpu_loading/poltime_secs
+    chown system system /proc/cpu_loading/uevent_enable
+    chmod 0664 /proc/cpu_loading/uevent_enable
+    chown system system /proc/cpu_loading/specify_cpus
+    chmod 0664 /proc/cpu_loading/specify_cpus
+    chown system system /proc/cpu_loading/specify_overThrhld
+    chmod 0664 /proc/cpu_loading/specify_overThrhld
+
+# CPU freq
+    chown system system /proc/cpufreq/cpufreq_limited_by_hevc
+    chmod 0660 /proc/cpufreq/cpufreq_limited_by_hevc
+    chown system system /proc/cpufreq/cpufreq_limited_max_freq_by_user
+    chmod 0660 /proc/cpufreq/cpufreq_limited_max_freq_by_user
+    chown system system /proc/cpufreq/cpufreq_power_mode
+    chmod 0660 /proc/cpufreq/cpufreq_power_mode
+    chown system system /proc/cpufreq/enable_hw_gov
+    chmod 0660 /proc/cpufreq/enable_hw_gov
+
+# BW monitor
+    chown system system /proc/fliperfs/cg_enable
+    chmod 0664 /proc/fliperfs/cg_enable
+    chown system system /proc/fliperfs/cg_threshold
+    chmod 0664 /proc/fliperfs/cg_threshold
+    chown system system /proc/fliperfs/cg_threshold_ddr3
+    chmod 0664 /proc/fliperfs/cg_threshold_ddr3
+    chown system system /proc/fliperfs/perf
+    chmod 0664 /proc/fliperfs/perf
+
+# perfmgr
+    chown system system /proc/perfmgr/smart/hps_is_heavy
+    chmod 0660 /proc/perfmgr/smart/hps_is_heavy
+    chown system system /proc/perfmgr/smart/hps_check_duration
+    chmod 0660 /proc/perfmgr/smart/hps_check_duration
+    chown system system /proc/perfmgr/smart/hps_check_last_duration
+    chmod 0660 /proc/perfmgr/smart/hps_check_last_duration
+    chown system system /proc/perfmgr/smart/hps_uevent_enable
+    chmod 0660 /proc/perfmgr/smart/hps_uevent_enable
+    chown system system /sys/power/dcm_state
+    chmod 0660 /sys/power/dcm_state
 
 ##Netlog tool
    #change permissions about terminal
@@ -423,6 +589,58 @@ on property:sys.boot_completed=1
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
+
+# Battery info
+on property:persist.vendor.mediatek.fg.disable=1
+    write /dev/gauge/FG_daemon_disable 1
+    write /dev/gauge2/FG_daemon_disable 1
+
+on property:persist.vendor.mediatek.fg.force25c=1
+    write /dev/gauge/Battery_Temperature 25
+    write /dev/gauge2/Battery_Temperature 25
+
+on property:persist.vendor.mediatek.fg.force25c=0
+    write /dev/gauge/Battery_Temperature 65535
+    write /dev/gauge2/Battery_Temperature 65535
+
+on property:persist.vendor.mediatek.fg.log.enable=1
+    write /dev/gauge/FG_daemon_log_level 7
+    write /dev/gauge2/FG_daemon_log_level 7
+
+# MTK fast charging support
+on property:persist.vendor.mediatek.fast_charging.support=*
+    write /sys/devices/platform/charger/fast_chg_indicator ${persist.vendor.mediatek.fast_charging.support}
+
+on property:vold.decrypt=trigger_reset_main
+    write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
+    setprop sys.boot_completed 0
+    setprop dev.bootcomplete 0
+
+on property:vold.decrypt=trigger_post_fs_data
+    write /proc/bootprof "INIT:vold.decrypt=trigger_post_fs_data"
+
+on property:vold.decrypt=trigger_restart_min_framework
+    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_min_framework"
+
+on property:vold.decrypt=trigger_restart_framework
+    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_framework"
+
+on property:vold.decrypt=trigger_shutdown_framework
+    write /proc/bootprof "INIT:vold.decrypt=trigger_shutdown_framework"
+    setprop sys.boot_completed 0
+    setprop dev.bootcomplete 0
+
+on property:sys.boot_completed=1
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
+    write /sys/block/sdc/queue/iostats 1
+    write /sys/block/sdc/queue/read_ahead_kb 512
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
+    write /sys/block/dm-4/queue/read_ahead_kb 128
+    write /sys/block/dm-5/queue/read_ahead_kb 128
 
 on property:sys.boot_completed=1
     restart android-hardware-media-c2-hal-1-2
