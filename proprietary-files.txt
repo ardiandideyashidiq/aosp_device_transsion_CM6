@@ -3285,6 +3285,9 @@ vendor/firmware/soc2_2_ram_wifi_1d_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_1e_1_hdr.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1d_1.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
+vendor/bin/wmt_loader
+vendor/bin/wmt_launcher
+vendor/bin/stp_dump3
 vendor/firmware/WMT_SOC.cfg
 
 # Gatekeeper & TEE
