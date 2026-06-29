@@ -470,21 +470,17 @@ vendor/lib64/libvow_comp_test.so
 vendor/etc/init/init.bt_drv.rc
 vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbluetooth_mtk.so
-vendor/lib64/libbluetooth_relayer.so
-vendor/lib64/libbluetoothem_mtk.so
 vendor/lib64/libbt-vendor.so
 vendor/lib64/libcsalgo.so
-vendor/lib64/libnvram_sec.so
-vendor/lib64/libnvram.so
+
 
 # Bluetooth (A2DP)
-vendor/etc/vintf/manifest/bluetooth_audio.xml
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so;SYMLINK=vendor/lib64/android.hardware.bluetooth.audio@2.0-impl.so
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so;SYMLINK=vendor/lib64/android.hardware.bluetooth.audio@2.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so;SYMLINK=vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so;SYMLINK=vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
+#vendor/etc/vintf/manifest/bluetooth_audio.xml
+vendor/lib64/hw/audio.bluetooth.default.so;SYMLINK=vendor/lib64/audio.bluetooth.default.so
+#vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so;SYMLINK=vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
+#vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so;SYMLINK=vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
 vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
-vendor/lib64/libbluetooth_audio_session_aidl.so
+#vendor/lib64/libbluetooth_audio_session_aidl.so
 vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
@@ -494,9 +490,6 @@ vendor/etc/aidl/hfp/hfp_codec_capabilities.xml
 vendor/etc/aidl/hfp/hfp_codec_capabilities.xml_mtk
 
 # Boot
-vendor/bin/hw/android.hardware.boot-service.mtk
-vendor/etc/init/android.hardware.boot-service.mtk.rc
-vendor/etc/vintf/manifest/android.hardware.boot-service.mtk.xml
 vendor/lib64/libmtk_bsg.so
 
 # Camera (Vendor)
@@ -3174,7 +3167,7 @@ vendor/lib64/vendor.mediatek.hardware.mmlpq-V4-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V8-ndk.so
 
 # Display - Graphics Allocator
-system_ext/lib64/libgralloc_extra_sys.so
+#system_ext/lib64/libgralloc_extra_sys.so
 vendor/bin/hw/android.hardware.graphics.composer@3.2-service
 vendor/bin/hw/android.hardware.graphics.composer@3.3-service
 vendor/bin/hw/android.hardware.graphics.composer@3.4-service
@@ -3476,15 +3469,15 @@ vendor/lib64/libthha.so
 vendor/lib64/hw/local_time.default.so;SYMLINK=vendor/lib64/local_time.default.so
 
 # Media
-system_ext/lib64/libged_sys.so
-system_ext/lib64/libsf_cpupolicy.so
-system_ext/lib64/libstagefright_wfd_mtk.so
+#system_ext/lib64/libged_sys.so
+#system_ext/lib64/libsf_cpupolicy.so
+#system_ext/lib64/libstagefright_wfd_mtk.so
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/vintf/manifest/manifest_media_c2_default.xml:vendor/etc/vintf/manifest/manifest_media.c2-mediatek-64b.xml
 vendor/etc/wfd_source_capability.csv
 vendor/lib64/libcodec2_fsr.so
-vendor/lib64/libcodec2_hidl_plugin.so
+#vendor/lib64/libcodec2_hidl_plugin.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
@@ -3837,6 +3830,8 @@ vendor/lib64/libconnfem.so
 vendor/lib64/libfgauge_gm30.so
 vendor/lib64/libfile_op.so
 vendor/lib64/libhwm.so
+vendor/lib64/libnvram_sec.so
+vendor/lib64/libnvram.so
 vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so
 
 # ODM VINTF
@@ -4377,7 +4372,7 @@ vendor/lib64/libnpagent_server.so
 vendor/lib64/libnpagent.so
 vendor/lib64/libnputils.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
-vendor/lib64/libperfctl_vendor.so
+#vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpkm.so
 vendor/lib64/libpn560_fw.so
