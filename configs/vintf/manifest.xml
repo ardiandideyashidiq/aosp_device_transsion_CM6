@@ -1,4 +1,4 @@
-<manifest version="9.0" type="device" target-level="202504">
+<manifest version="7.0" type="device" target-level="7">
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="64">passthrough</transport>

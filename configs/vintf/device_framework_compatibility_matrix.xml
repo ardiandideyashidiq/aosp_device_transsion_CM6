@@ -8,6 +8,14 @@
     </interface>
   </hal>
   <hal format="aidl" optional="true">
+    <name>android.hardware.radio.ims</name>
+    <interface>
+      <name>IRadioIms</name>
+      <instance>slot1</instance>
+      <instance>slot2</instance>
+    </interface>
+  </hal>
+  <hal format="aidl" optional="true">
     <name>android.hardware.radio.data</name>
     <interface>
       <name>IRadioData</name>
