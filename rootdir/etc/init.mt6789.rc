@@ -58,7 +58,7 @@ on late-init
 
 # mount different fs start
 
-on property:init.svc.vendor.charger=running
+on charger
     chmod 0666 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
