@@ -122,4 +122,60 @@
           <instance>default</instance>
       </interface>
   </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.mediatek.hardware.apmonitor</name>
+      <version>2.0</version>
+      <interface>
+          <name>IApmService</name>
+          <instance>apm_hidl_service</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.mediatek.hardware.atci</name>
+      <version>1.0</version>
+      <interface>
+          <name>IAtcid</name>
+          <instance>default</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.mediatek.hardware.engineermode</name>
+      <version>1.0-3</version>
+      <interface>
+          <name>IEmd</name>
+          <instance>EmHidlServer</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.mediatek.hardware.keymaster_attestation</name>
+      <version>1.0-1</version>
+      <interface>
+          <name>IKeymasterDevice</name>
+          <instance>default</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.transsion.hardware.trancam.trancamserver</name>
+      <version>1.0</version>
+      <interface>
+          <name>ITrancamserver</name>
+          <instance>default</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.trustonic.tee.tui</name>
+      <version>1.0</version>
+      <interface>
+          <name>ITui</name>
+          <instance>default</instance>
+      </interface>
+  </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.trustonic.tee</name>
+      <version>1.0-1</version>
+      <interface>
+          <name>ITee</name>
+          <instance>default</instance>
+      </interface>
+  </hal>
 </compatibility-matrix>
