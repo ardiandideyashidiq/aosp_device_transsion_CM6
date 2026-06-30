@@ -4124,9 +4124,9 @@ vendor/lib64/libtranssion_forkexecwrap.so
 vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
 
 # Transsion Camera Server
-#vendor/bin/hw/trancamserver
-#vendor/etc/init/trancamserver.rc
-#vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
+vendor/bin/hw/trancamserver
+vendor/etc/init/trancamserver.rc
+vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver-V1-ndk.so
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 
